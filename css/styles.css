@@ -1,0 +1,71 @@
+#title{
+
+  font-size: 4rem;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.btn-lg{
+  margin: 20px auto;
+  margin-top: 3rem;
+}
+
+.table{
+  margin: 10px auto;
+  padding-top: 10rem;
+}
+
+.invisible{
+  display: none;
+}
+
+.delete{
+  color: #dc3545;
+}
+
+.add{
+  color: #28a745;
+}
+
+.input-width{
+  max-width: 5rem;
+  min-width: 3rem;
+  max-height: 1.8rem;
+}
+
+.selector-height{
+  height: 1.8rem;
+
+}
+
+.form-select{
+  margin-top: 4px;
+}
+
+#defender-troops{
+  text-align: center;
+}
+
+#attacker-troops{
+  text-align: center;
+}
+
+.form-control{
+  margin-top: 2px;
+}
+
+td div{
+  max-height: 1px;
+}
+
+h2{
+  margin: 2rem auto;
+}
+
+#result-div{
+  margin-bottom: 3rem;
+}

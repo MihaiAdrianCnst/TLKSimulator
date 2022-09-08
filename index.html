@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>TLK Simulator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://kit.fontawesome.com/4b365690ea.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <h1 id="title" class="text-align-center"><strong>TLK Simulator</strong></h1>
+  <div class="container text-align-center troop-select-div">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 text-align-center ">
+
+        <h2>Attacker</h2>
+
+        <div id="attacker-troops">
+          <table class="table attacker-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Type</th>
+                <th scope="col">Count</th>
+                <th scope="col">HP</th>
+                <th scope="col">Str</th>
+                <th scope="col">Rgd</th>
+                <th scope="col">Racc</th>
+              </tr>
+            </thead>
+            <tbody class="table-attacker-body">
+              <tr class="table-smaller">
+                <th scope="row"><i class="fa-sharp fa-solid fa-square-minus fa-2x delete"></i></th>
+                <td>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Artillery</option>
+                      <option value="1">Cavalry</option>
+                      <option value="2">Pike</option>
+                      <option value="3">Infantry</option>
+                    </select>
+                </td>
+                <td>
+                  <div class="mb-3">
+                    <input type="text" class="form-control input-width text-align-center" id="formGroupExampleInput" placeholder="Count" value="39">
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3">
+                    <input type="text" class="form-control input-width text-align-center" id="formGroupExampleInput" placeholder="HP" value="195">
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3">
+                    <input type="text" class="form-control input-width text-align-center" id="formGroupExampleInput" placeholder="Str" value="24">
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3">
+                    <input type="text" class="form-control input-width text-align-center" id="formGroupExampleInput" placeholder="Rgd" value="68">
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3">
+                    <input type="text" class="form-control input-width text-align-center" id="formGroupExampleInput" placeholder="Racc" value="75">
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <i class="fa-solid fa-circle-plus fa-2x add add-attacker"></i>
+
+        </div>
+
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 text-align-center">
+
+        <h2>Defender</h2>
+
+        <div id="defender-troops">
+          <table class="table defender-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Type</th>
+                <th scope="col">Count</th>
+                <th scope="col">HP</th>
+                <th scope="col">Str</th>
+                <th scope="col">Rgd</th>
+                <th scope="col">Racc</th>
+              </tr>
+            </thead>
+            <tbody class="table-defender-body">
+              <tr class="table-smaller">
+                <th scope="row"><i class="fa-sharp fa-solid fa-square-minus fa-2x delete"></i></th>
+                <td>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Artillery</option>
+                    <option value="1">Cavalry</option>
+                    <option value="2">Pike</option>
+                    <option value="3">Infantry</option>
+                  </select>
+                </td>
+                <td>
+                  <div class="mb-3">
+                    <input type="text" class="form-control input-width text-align-center" id="formGroupExampleInput" placeholder="Count" value="54">
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3">
+                    <input type="text" class="form-control input-width text-align-center" id="formGroupExampleInput" placeholder="HP" value="165">
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3">
+                    <input type="text" class="form-control input-width text-align-center" id="formGroupExampleInput" placeholder="Str" value="14">
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3">
+                    <input type="text" class="form-control input-width text-align-center" id="formGroupExampleInput" placeholder="Rgd" value="63">
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3">
+                    <input type="text" class="form-control input-width text-align-center" id="formGroupExampleInput" placeholder="Racc" value="80">
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <i class="fa-solid fa-circle-plus fa-2x add add-defender"></i>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+<div class="text-align-center">
+ <button type="button" name="button" class="btn btn-primary btn-lg" id="battle-btn">Battle</button>
+</div>
+
+<div id = "result-div"class="invisible">
+
+
+  <h2 class = "result text-align-center">Result</h2>
+
+  <div class="container text-align-center">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 text-align-center ">
+
+        <h2>Attacker</h2>
+
+        <div id="result-attacker-troops">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Soldiers</th>
+                <th scope="col">Tot</th>
+                <th scope="col">Inj</th>
+                <th scope="col">Dead</th>
+                <th scope="col">Capt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-smaller">
+                <th scope="row">Artillery</th>
+                <td>
+                  <div class="mb-3 att-tot-art">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 att-inj-art">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 att-dead-art">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 att-cap-art">
+                    0
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="table-smaller">
+                <th scope="row">Cavalry</th>
+                <td>
+                  <div class="mb-3 att-tot-cav">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 att-inj-cav">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 att-dead-cav">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 att-cap-cav">
+                    0
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="table-smaller">
+                <th scope="row">Infantry</th>
+                <td>
+                  <div class="mb-3 att-tot-inf">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 att-inj-inf">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 att-dead-inf">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 att-cap-inf">
+                    0
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+      <div id = "result-div" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 text-align-center">
+
+        <h2>Defender</h2>
+
+        <div id="result-defender-troops">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Soldiers</th>
+                <th scope="col">Tot</th>
+                <th scope="col">Inj</th>
+                <th scope="col">Dead</th>
+                <th scope="col">Capt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-smaller">
+                <th scope="row">Artillery</th>
+                <td>
+                  <div class="mb-3 def-tot-art">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 def-inj-art">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 def-dead-art">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 def-cap-art">
+                    0
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="table-smaller">
+                <th scope="row">Cavalry</th>
+                <td>
+                  <div class="mb-3 def-tot-cav">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 def-inj-cav">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 def-dead-cav">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 def-cap-cav">
+                    0
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="table-smaller">
+                <th scope="row">Infantry</th>
+                <td>
+                  <div class="mb-3 def-tot-inf">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 def-inj-inf">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 def-dead-inf">
+                    0
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3 def-cap-inf">
+                    0
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+  <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>
