@@ -507,7 +507,7 @@ function forceFinish() {
   $(".att-inj-cav").text(attCavInj);
   $(".att-inj-inf").text(attInfInj);
 
-  $(".def-inj-art").text(defArtInj);
+  $(".def-inj-art").text(defArtInj);//
   $(".def-inj-cav").text(defCavInj);
   $(".def-inj-inf").text(defInfInj);
 
