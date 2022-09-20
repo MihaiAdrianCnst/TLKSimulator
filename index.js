@@ -505,7 +505,7 @@ function forceFinish() {
 
   $(".att-inj-art").text(attArtInj);
   $(".att-inj-cav").text(attCavInj);
-  $("att-inj-inf").text(attInfInj);
+  $(".att-inj-inf").text(attInfInj);
 
   $(".def-inj-art").text(defArtInj);
   $(".def-inj-cav").text(defCavInj);
@@ -523,9 +523,9 @@ function forceFinish() {
   $(".att-cap-cav").text(attCavCap);
   $(".att-cap-inf").text(attInfCap);
 
-  $("def-cap-art").text(defArtCap);
-  $("def-cap-cav").text(defCavCap);
-  $("def-cap-inf").text(defInfCap);
+  $(".def-cap-art").text(defArtCap);
+  $(".def-cap-cav").text(defCavCap);
+  $(".def-cap-inf").text(defInfCap);
 
 }
 
